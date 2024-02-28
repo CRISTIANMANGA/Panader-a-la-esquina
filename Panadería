@@ -1,0 +1,52 @@
+menu_panaderia = {
+    "Bebidas": {
+        "Café": 2.5,
+        "Té": 2.0,
+        "Jugo de naranja": 2.0,
+        "Leche": 1.5,
+        "Agua": 1.0,
+        "Promoción 1": "Café + Croissant por 3.5",
+        "Promoción 2": "Té + Muffin por 3.0"
+    },
+    "Pan dulce": {
+        "Croissant": 1.5,
+        "Muffin": 1.0,
+        "Donut": 1.2,
+        "Palmera de chocolate": 1.8,
+        "Berlina": 1.2,
+        "Promoción 1": "Croissant + Café por 3.5",
+        "Promoción 2": "Muffin + Té por 3.0"
+    },
+    "Pan salado": {
+        "Empanada": 2.0,
+        "Croissant de jamón y queso": 2.5,
+        "Pan de ajo": 1.8,
+        "Pizza de jamón y queso": 2.5,
+        "Sandwich de pollo": 2.0,
+        "Promoción 1": "Empanada + Jugo de naranja por 3.0",
+        "Promoción 2": "Sandwich de pollo + Agua por 2.5"
+    }
+}
+
+# Mostrar el menú al usuario
+print("Bienvenido a la panadería. Este es nuestro menú:")
+for categoria, productos in menu_panaderia.items():
+    print(f"\n{categoria}:")
+    for producto, precio in productos.items():
+        print(f"{producto}: ${precio}")
+
+# Preguntar al usuario qué desea
+pedido = input("\n¿Qué le gustaría ordenar? Por favor ingrese el producto: ")
+
+# Verificar si el producto está en el menú
+encontrado = False
+for productos in menu_panaderia.values():
+    if pedido in productos:
+        encontrado = True
+        break
+
+if encontrado:
+    print(f"¡Perfecto! Usted ha ordenado: {pedido}")
+else:
+    print("Lo siento, ese producto no está en nuestro menú. Por favor, seleccione otro.")
+
